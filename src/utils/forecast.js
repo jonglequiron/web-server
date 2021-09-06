@@ -16,7 +16,8 @@ const forecast = (lat,lon,callback) => {
             const temp = current.temperature
             const feelsLike = current.feelslike
             const wxDesc = current.weather_descriptions[0]
-            data = wxDesc + '. The current temperature is ' + temp + ' Deg C. But it feels like ' + feelsLike + ' Deg C.'
+            const rh = current.humidity
+            data = wxDesc + '. The current temperature is ' + temp + ' Deg C. But it feels like ' + feelsLike + ' Deg C. Based on the data, the humidity is ' + rh +'%.'
             callback(undefined, data)
         }
     })
